@@ -33,16 +33,19 @@ DB_CONNECT="mysql -u root -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE"
 phpContainerRoot="docker exec -it -u root ${NAMESPACE}_php bash -lc"
 phpContainer="docker exec -it ${NAMESPACE}_php bash -lc"
 dbContainer="docker exec -it ${NAMESPACE}_db bash -lc"
+#!/bin/bash
 
 getLogo() {
-  echo "                             _____      _            _             "
-  echo "                            / __  \    | |          | |            "
-  echo " _ __ ___   __ _  __ _  ___ \`' / /'  __| | ___   ___| | _____ _ __ "
-  echo "| '_ \` _ \ / _\` |/ _\` |/ _ \  / /   / _\` |/ _ \ / __| |/ / _ \ '__|"
-  echo "| | | | | | (_| | (_| |  __/./ /___| (_| | (_) | (__|   <  __/ |   "
-  echo "|_| |_| |_|\__,_|\__, |\___|\_____(_)__,_|\___/ \___|_|\_\___|_|   "
-  echo "                  __/ |                                            "
-  echo "                 |___/                                             "
+  cat <<'EOF'
+                                                  _            _
+                                                 | |          | |
+  _ __ ___   __ _  __ _  ___ ______ ___  ___   __| | ___   ___| | _____ _ __
+ | '_ ` _ \ / _` |/ _` |/ _ \______/ _ \/ __| / _` |/ _ \ / __| |/ / _ \ '__|
+ | | | | | | (_| | (_| |  __/     | (_) \__ \| (_| | (_) | (__|   <  __/ |
+ |_| |_| |_|\__,_|\__, |\___|      \___/|___(_)__,_|\___/ \___|_|\_\___|_|
+                   __/ |
+                  |___/
+EOF
 }
 
 sedForOs() {
