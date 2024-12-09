@@ -33,16 +33,15 @@ services:
   php:
     container_name: ${NAMESPACE}_php
     image: osioaliu/php_mageos:${PHP_VERSION_SET}
-    build:
-      context: ./.docker/php
-      args:
-        PHP_VERSION_SET: ${PHP_VERSION_SET}
-        ACPU_VERSION: $ACPU_VERSION
-        XDEBUG_VERSION: $XDEBUG_VERSION
-        FIXUID_VERSION: $FIXUID_VERSION
-        USER_PHP: $USER_PHP
-        GROUP_PHP: $GROUP_PHP
-    env_file: .env
+#    build:
+#      context: ./.docker/php
+#      args:
+#        PHP_VERSION_SET: ${PHP_VERSION_SET}
+#        ACPU_VERSION: $ACPU_VERSION
+#        XDEBUG_VERSION: $XDEBUG_VERSION
+#        FIXUID_VERSION: $FIXUID_VERSION
+#        USER_PHP: $USER_PHP
+#        GROUP_PHP: $GROUP_PHP
     sysctls:
       net.core.somaxconn: 65536
     depends_on:
@@ -69,7 +68,6 @@ services:
   db:
     container_name: ${NAMESPACE}_db
     image: mariadb:${MARIADB_VERSION}
-    env_file: .env
     ports:
       - ${MYSQL_PORT}:3306
     healthcheck:
