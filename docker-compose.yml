@@ -33,6 +33,7 @@ services:
   php:
     container_name: ${NAMESPACE}_php
     image: osioaliu/php_mageos:${PHP_VERSION_SET}
+    env_file: .env
 #    build:
 #      context: ./.docker/php
 #      args:
@@ -68,6 +69,7 @@ services:
   db:
     container_name: ${NAMESPACE}_db
     image: mariadb:${MARIADB_VERSION}
+    env_file: .env
     ports:
       - ${MYSQL_PORT}:3306
     healthcheck:
