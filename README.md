@@ -1,4 +1,4 @@
-## Docker stack with Magento 2 latest installer 
+## Docker stack with MageOS latest installer 
 ### One Stack for all Projects by adjusting .env file
 **Docker containers: Varnish, Nginx, PHP, Opensearch, MariaDB, Redis, Mailhog, RabbitMQ, Watchtower**
 using sockets with PHP (linux/amd64, linux/arm64) instead of TCP/IP for redis sessions and MySQL
@@ -7,14 +7,14 @@ using sockets with PHP (linux/amd64, linux/arm64) instead of TCP/IP for redis se
 
 ### Get Source
 
-    git clone https://github.com/aliuosio/mage2.docker.git
+    git clone https://github.com/aliuosio/mage-os.docker
 
 > check for updates with `git fetch && git pull`
 
 ### Installation
  Fresh Installation (latest magento 2 version) or your running project when located in your filesystem
     
-    cd mage2.docker
+    cd mage-os.docker
     chmod +x bin/*
     bin/install
 
@@ -50,8 +50,7 @@ using sockets with PHP (linux/amd64, linux/arm64) instead of TCP/IP for redis se
 
     
 ### Features
-* Fresh Install or use existing magento 2 project on your file system using `bin/install config`
-* alternative **OSX docker-compose** file using docker-sync **for better performance**
+* Fresh Install or use existing mage-os project on your file system using `bin/install config`
 * set project directory to where ever you want (as configurable option in .env)
 * [Mailhog](https://github.com/mailhog/MailHog) container
 * **Extra Composer Packages with Magento 2 Installer**
@@ -59,15 +58,8 @@ using sockets with PHP (linux/amd64, linux/arm64) instead of TCP/IP for redis se
     * [mage2tv/magento-cache-clean](https://github.com/mage2tv/magento-cache-clean) Cache Cleaner
 * Xdebug as configurable option (xdebug.idekey=PHPSTORM)
 
-### Todos
-* ~~setup php image for windows and osx~~
-* configure mailhog with `bin/install`
-* add cache warmer
-* fix `bin/install config`
-* reduce the number of volumes
-
 #### Support
-If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/aliuosio/mage2.docker/issues).
+If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/aliuosio/mage-os.docker/issues).
 
 #### Contribute
 Please Contribute by creating a fork of this repository.  
