@@ -13,7 +13,7 @@ RUN apk update && apk upgrade \
     && apk add --update linux-headers \
     && apk add --virtual build-dependencies libc-dev libxslt-dev freetype-dev libjpeg-turbo-dev libpng-dev libzip-dev libwebp-dev curl \
     && set -xe \
-    && apk add npm bash bash-completion nano tzdata icu procps git \
+    && apk add npm bash bash-completion nano tzdata icu procps git webp \
     && apk add --virtual .php-deps make \
     && apk add --virtual .build-deps $PHPIZE_DEPS zlib-dev icu-dev icu-data-full gettext gettext-dev g++ curl-dev \
     && docker-php-ext-configure hash --with-mhash \
